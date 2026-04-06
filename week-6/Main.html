@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Books Hub</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+/* MAIN GRID */
+.wrapper{
+    display:grid;
+    grid-template-rows:auto auto 1fr auto;
+    height:100vh;
+}
+
+/* Header */
+.header{
+    background:#fd8a05;
+    text-align:center;
+    padding:20px;
+    font-weight:bold;
+}
+
+/* Offer bar */
+.offer{
+    background:#6372b3;
+    text-align:center;
+    padding:10px;
+}
+
+/* Content grid */
+.main{
+    display:grid;
+    grid-template-columns:200px 1fr;
+}
+
+/* Sidebar */
+.menu{
+    background:#c98a2e;
+    padding:20px;
+}
+
+.menu a{
+    display:block;
+    margin:15px 0;
+    color:rgb(6, 6, 7);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* iframe area */
+.content{
+    padding:10px;
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:4px solid #b44;
+}
+
+/* Footer */
+.footer{
+    background:#ccc;
+    text-align:center;
+    padding:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="header">
+Books Hub <br>
+AV.SC.U4CSE25214
+</div>
+
+<div class="offer">
+Sales Flat 15% OFF - By Shopping Hub
+</div>
+
+<div class="main">
+
+<div class="menu">
+<a href="Fiction.html" target="shopframe">Fiction</a>
+<a href="Horror.html" target="shopframe">Horror</a>
+<a href="Thriller.html" target="shopframe">Thriller</a>
+</div>
+
+<div class="content">
+<iframe name="shopframe"></iframe>
+</div>
+
+</div>
+
+<div class="footer">
+All rights reserved © Shopping Hub
+</div>
+
+</div>
+
+</body>
+</html>

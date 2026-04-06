@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    font-family:Arial;
+    text-align:center;
+}
+
+/* GRID */
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    border:3px solid #b44;
+    padding:15px;
+}
+
+img{
+    width:120px;
+    height:120px;
+}
+
+button{
+    background:grey;
+    color:white;
+    border:none;
+    padding:6px 12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Fiction Books</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi3hYFsFUByiMIlYMendRbU-gPuRBRPbIZCQ&s">
+<h3>The Island</h3>
+<p>Price: Rs 720/-</p>
+<button>Add To Cart</button>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3C1apj-LwAVgP6m4WyTVBnS_E8zuxgZFUQ&s">
+<h3>Afternoons In Ithaka</h3>
+<p>Price: Rs 520/-</p>
+<button>Add To Cart</button>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/71WnnSFSPaL._AC_UF1000,1000_QL80_.jpg">
+<h3>Zorba the Greek</h3>
+<p>Price: Rs 490/-</p>
+<button>Add To Cart</button>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/612a8GL+KVL._AC_UF1000,1000_QL80_.jpg">
+<h3>Corellis Mandolin</h3>
+<p>Price: Rs 630/-</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+</body>
+</html>
