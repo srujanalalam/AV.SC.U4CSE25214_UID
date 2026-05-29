@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <tr>
+    NAME:<input type="text" onblur="checkname()" id="name">
+    <p id="one"></p>
+    </body>
+    <script>
+function checkname(){
+    let x = document.getElementById("name").value;
+    if (x.length < 5){
+        document.getElementById("one").innerHTML = "Name must be at least 5 characters";
+        return false;
+    } else {
+        document.getElementById("one").innerHTML = "";
+        return true;
+    }
+}
+</script>
+</html>

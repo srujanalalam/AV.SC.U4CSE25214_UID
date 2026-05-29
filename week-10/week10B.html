@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function sortNumbers(a, b, c) {
+    let largest, middle, smallest;
+    if (a >= b && a >= c) {
+        largest = a;
+        if (b >= c) {
+            middle = b;
+            smallest = c;
+        } else {
+            middle = c;
+            smallest = b;
+        }
+    }
+    else if (b >= a && b >= c) {
+        largest = b;
+        if (a >= c) {
+            middle = a;
+            smallest = c;
+        } else {
+            middle = c;
+            smallest = a;
+        }
+    }
+    else {
+        largest = c;
+        if (a >= b) {
+            middle = a;
+            smallest = b;
+        } else {
+            middle = b;
+            smallest = a;
+        }
+    }
+
+    alert("Sorted Order: " + smallest + ", " + middle + ", " + largest);
+}
+let n1 = parseInt(prompt("Enter first number:"));
+let n2 = parseInt(prompt("Enter second number:"));
+let n3 = parseInt(prompt("Enter third number:"));
+sortNumbers(n1, n2, n3);
+</script>
+</body>
+</html>
