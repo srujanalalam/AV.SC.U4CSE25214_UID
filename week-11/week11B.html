@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    E-mail:<input type="email" onblur="checkmail()" id="mail"><p id="two"></p>
+    </body>
+    <script>
+        function checkmail(){
+    let x = document.getElementById("mail").value;
+    let pattern = /^[A-Za-z0-9_.]+@gmail\.com$/;
+
+    if (!pattern.test(x)){
+        document.getElementById("two").innerHTML = "Incorrect email format";
+        return false;
+    } else {
+        document.getElementById("two").innerHTML = "";
+        return true;
+    }
+}
+    </script>
+</html>

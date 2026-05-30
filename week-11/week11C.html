@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    PASSWORD:<input type="text" onblur="checkpass()" id="password"><p id="three"></p>
+    </body>
+    <script>
+    function checkpass(){
+    let x = document.getElementById("password").value;
+
+    let weak = /^[A-Za-z\d]{6,}$/;
+    let strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{6,}$/;
+
+    if (strong.test(x)){
+        document.getElementById("three").innerHTML = "Strong password";
+        return true;
+    } 
+    else if (weak.test(x)){
+        document.getElementById("three").innerHTML = "Weak password";
+        return true;  
+    } 
+    else{
+        document.getElementById("three").innerHTML = "Invalid Format";
+        document.getElementById("three").innerHTML="password should be atleast of length 6"
+        return false;
+    }
+}
+
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    PHONE NO.:<input type="text" onblur="checknumb()" id="phone"><p id="four"></p>
+    </body>
+    <script>
+function checknumb(){
+    let x = document.getElementById("phone").value;
+    let pattern = /^\d{10}$/;
+
+    if (!pattern.test(x)){
+        document.getElementById("four").innerHTML = "Enter exactly 10 digits";
+        return false;
+    } else {
+        document.getElementById("four").innerHTML = "";
+        return true;
+    }
+}
+    </script>
+</html>

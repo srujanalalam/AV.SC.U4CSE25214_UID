@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        function productsign(){
+        let num1=parseInt(prompt("enter number1:"));
+        let num2=parseInt(prompt("enter number2:"));
+        let num3=parseInt(prompt("enter number3:"));
+        let product=num1*num2*num3;
+        if (product<0){
+            document.write("the sign is '-' .");
+        }
+        else if(product>0){
+            document.write('the sign is "+" .');
+        }
+        else{document.write("it is zero.")}
+        }
+
+        productsign();
+    </script>
+</body>

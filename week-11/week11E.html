@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+    padding: 20px;
+    background-color: white ;
+    text-align: center;
+    border: 2px solid black;
+    height:500px;
+    width: 300px;
+    margin:auto;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+}
+p{
+    color:red;
+}
+</style>
+</head>
+
+<body style="background-color:#f5c7f7;">
+
+<div class="box">
+<h2>Register</h2>
+
+<form onsubmit="return checkall()">
+
+<table border="2" cellpadding="2" cellspacing="0" align="center" style="text-align: center;height:450px;">
+
+<tr>
+    <th>NAME:</th>
+    <td><input type="text" onblur="checkname()" id="name"><p id="one" ></p></td>
+</tr>
+
+<tr>
+    <th>E-mail:</th>
+    <td><input type="email" onblur="checkmail()" id="mail"><p id="two" ></p></td>
+</tr>
+
+<tr>
+    <th>PASSWORD:</th>
+    <td><input type="text" onblur="checkpass()" id="password"><p id="three" ></p></td>
+</tr>
+
+<tr>
+    <th>PHONE NO.:</th>
+    <td><input type="text" onblur="checknumb()" id="phone"><p id="four" ></p></td>
+</tr>
+
+<tr>
+    <td colspan="2"><input type="submit"></td>
+</tr>
+
+</table>
+</form>
+</div>
+
+<script>
+function checkname(){
+    let x = document.getElementById("name").value;
+    if (x.length < 5){
+        document.getElementById("one").innerHTML = "Name must be at least 5 characters";
+        return false;
+    } else {
+        document.getElementById("one").innerHTML = "";
+        return true;
+    }
+}
+
+function checkmail(){
+    let x = document.getElementById("mail").value;
+    let pattern = /^[A-Za-z0-9_.]+@gmail\.com$/;
+
+    if (!pattern.test(x)){
+        document.getElementById("two").innerHTML = "Incorrect email format";
+        return false;
+    } else {
+        document.getElementById("two").innerHTML = "";
+        return true;
+    }
+}
+
+function checkpass(){
+    let x = document.getElementById("password").value;
+
+    let weak = /^[A-Za-z\d]{6,}$/;
+    let strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{6,}$/;
+
+    if (strong.test(x)){
+        document.getElementById("three").innerHTML = "Strong password";
+        return true;
+    } 
+    else if (weak.test(x)){
+        document.getElementById("three").innerHTML = "Weak password";
+        return true;  
+    } 
+    else{
+        document.getElementById("three").innerHTML = "Invalid Format";
+        return false;
+    }
+}
+
+function checknumb(){
+    let x = document.getElementById("phone").value;
+    let pattern = /^\d{10}$/;
+
+    if (!pattern.test(x)){
+        document.getElementById("four").innerHTML = "Enter exactly 10 digits";
+        return false;
+    } else {
+        document.getElementById("four").innerHTML = "";
+        return true;
+    }
+}
+
+function checkall(){
+    let a = checkname();
+    let b = checkmail();
+    let c = checkpass();
+    let d = checknumb();
+
+    if (a && b && c && d){
+        alert("Form submitted successfully");
+        return true;   
+    } else {
+        alert("Please fill all fields correctly");
+        return false;  
+    }
+}
+</script>
+
+</body>
+</html>
