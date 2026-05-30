@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;700&family=Archivo:wght@400;700&family=Mulish:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Pacifico&family=Space+Mono:wght@400;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<title>HackerRank</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: white;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr;
+    align-items: center;
+    background: white;
+    color: black;
+    height: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    font-family: 'Space Mono', monospace;
+}
+
+.menu {
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.demo-btn {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition:
+        background-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(13,159,79,0.5);
+}
+
+.demo-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 10px 25px rgba(13,159,79,0.4),
+        0 0 20px rgba(13,159,79,0.5);
+}
+
+.demo-btn:active { transform: scale(0.97); }
+
+.account-btn {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition:
+        background-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(13,159,79,0.5);
+}
+
+.account-btn:hover {
+    background: #0d9f4f;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 10px 25px rgba(13,159,79,0.4),
+        0 0 20px rgba(13,159,79,0.5);
+}
+
+.account-btn:active { transform: scale(0.97); }
+
+/* Animation Section */
+.hero {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0px;
+    background: white;
+}
+
+h1 {
+    font-size: 65px;
+    text-align: center;
+    color: black;
+    font-weight: lighter;
+    font-family: 'Lora', serif;
+}
+
+span {
+    color: rgb(1, 160, 1);
+}
+
+.brands {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.two-col p {
+    text-align: center;
+    position: relative;
+    left: 20px;
+    padding: 12px;
+}
+
+.two-col .relative {
+    position: relative;
+    left: 20px;
+    padding: 12px;
+}
+
+/* ===== GLOW SECTIONS ===== */
+
+.section1 {
+    position: relative;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at center,
+        rgba(20,40,90,0.8),
+        rgba(0,0,0,1) 70%);
+    overflow: hidden;
+}
+
+.topGlow {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 280px;
+    background:
+        linear-gradient(
+        to bottom,
+        rgba(255,255,255,1) 0%,
+        rgba(220,255,245,0.95) 20%,
+        rgba(0,255,180,0.85) 45%,
+        rgba(0,180,255,0.75) 65%,
+        rgba(0,0,0,0) 100%
+        );
+    filter: blur(28px);
+    transform: scaleY(1.4);
+}
+
+.content1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 40px 100px;
+    text-align: center;
+}
+
+.content1 h1 {
+    font-size: 65px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+}
+
+.content1 p {
+    width: 70%;
+    font-size: 32px;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== WORD-BY-WORD SCROLL ANIMATION ===== */
+.scroll-para {
+    color: transparent;
+}
+
+.scroll-word {
+    display: inline;
+    color: rgba(160, 160, 160, 1);
+    transition: color 0.4s ease;
+}
+
+.scroll-word.lit {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* ===== GLOW SECTION 2 ===== */
+.section2 {
+    position: relative;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+
+.bottomGlow {
+    position: absolute;
+    top: -180px;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    background:
+        linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.95) 15%,
+        rgba(0,120,255,0.85) 40%,
+        rgba(0,255,255,0.9) 60%,
+        rgba(255,255,255,1) 100%
+        );
+    filter: blur(28px);
+    transform: scaleY(1.4);
+}
+
+.content2 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 220px;
+    text-align: center;
+}
+
+.content2 h1 {
+    font-size: 72px;
+    font-weight: 400;
+    color: black;
+    font-family: 'Lora', serif;
+}
+
+/* ===== PRODUCT SECTION TEXT STYLES ===== */
+
+/* Badge: monospace pill */
+.product-badge {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    position: relative;
+    left: 20px;
+}
+
+/* Product section heading: serif */
+.product-heading {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: black;
+    text-align: left;
+    position: relative;
+    left: 20px;
+    padding: 12px;
+    line-height: 1.3;
+}
+
+/* Product section body: Inter */
+.product-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    text-align: left;
+    position: relative;
+    left: 20px;
+    padding: 12px;
+}
+
+/* ===== TESTIMONIALS CAROUSEL ===== */
+.testimonials-section {
+    background-color: #0d1117;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-logo {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.slide-quote {
+    color: white;
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 20px;
+    font-family: 'Lora', serif;
+}
+
+.slide-author {
+    color: #aaa;
+    font-size: 16px;
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+}
+
+.slide-author strong {
+    color: white;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 16px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    z-index: 10;
+    user-select: none;
+}
+
+.carousel-btn:hover { opacity: 1; }
+.carousel-btn.prev  { left: -10px; }
+.carousel-btn.next  { right: -10px; }
+
+.carousel-dots {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active { background: white; }
+
+.logo-akamai    { color: #f90; }
+.logo-atlassian { color: #0052cc; }
+.logo-vanguard  { color: #c00; font-family: Georgia, serif; }
+.logo-ukg       { color: #00b5ad; font-family: 'Nunito Sans', sans-serif; }
+.logo-doordash  { color: #ff3008; font-family: 'Montserrat', sans-serif; }
+.logo-deliveroo { color: #00ccbc; font-family: 'Mulish', sans-serif; }
+
+.for-developers {
+    background: white;
+    padding: 80px 40px;
+}
+
+.for-developers .two-col {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#three {
+    display: grid;
+    grid-template-columns: 6.5fr 1fr 1fr 1.5fr;
+}
+
+.btn {
+    background: black;
+    color: white;
+    padding: 18px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(13,159,79,0.5);
+}
+
+.btn:hover {
+    background: #0d9f4f;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 10px 25px rgba(13,159,79,0.4),
+        0 0 20px rgba(13,159,79,0.5);
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn2 {
+    background: white;
+    color: black;
+    padding: 18px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0 rgba(13,159,79,0.5);
+}
+
+.btn2:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 10px 25px rgba(13,159,79,0.4),
+        0 0 20px rgba(13,159,79,0.5);
+}
+
+.btn2:active { transform: scale(0.97); }
+
+.tablebtn {
+    background: #0d1117;
+    color: grey;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tablebtn:hover {
+    color: rgb(2, 138, 2);
+    transform: scale(1.03);
+}
+
+.tablebtn:active { transform: scale(0.97); }
+
+.tablebtn2 {
+    padding: 10px 10px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tablebtn2:hover {
+    color: rgb(2, 138, 2);
+    transform: scale(1.03);
+}
+
+.tablebtn2:active { transform: scale(0.97); }
+
+/* ===== FLY-UP SCROLL ANIMATION ===== */
+.fly-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fly-section.fly-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header2">
+    <div class="logo" style="text-align:center">HackerRank</div>
+    <div class="menu">Products</div>
+    <div class="menu">Solutions</div>
+    <div class="menu">Resources</div>
+    <div class="menu">Pricing</div>
+    <div class="menu">Human Data</div>
+    <div class="menu">Log In</div>
+    <div class="demo-btn">Request Demo</div>
+    <div class="account-btn">Create Free Account</div>
+</div>
+
+<!-- Hero / Typewriter Section -->
+<div class="hero">
+    <h1>
+        <span id="text"></span>
+        the next <br>
+        generation developer
+    </h1>
+</div>
+
+<p style="text-align:center;color:gray;font-size:large;font-family:'Inter',sans-serif;">
+    We help thousands of companies hire and upskill the next<br>
+    generation of developers, and millions of developers to become one.
+</p>
+
+<div>
+    <table align="center" cellpadding="10" cellspacing="20">
+        <tr>
+            <td class="btn" style="text-align:center;border-radius:5px;">
+                Start a free trial
+            </td>
+            <td class="btn2" style="text-align:center;border-radius:5px;border:1px solid black;">
+                For developers
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="brands">
+    <table align="center" cellpadding="0" cellspacing="50">
+        <tr>
+            <td style="font-family:'Nunito Sans', sans-serif;">airbnb</td>
+            <td style="font-family:'Inter', sans-serif;">stripe</td>
+            <td style="font-family:'Source Sans 3', sans-serif;">Linkedin</td>
+            <td style="font-family:'Plus Jakarta Sans', sans-serif;">ATLASSIAN</td>
+            <td style="font-family:'IBM Plex Sans', sans-serif;">IBM</td>
+            <td style="font-family:'Cormorant Garamond', serif;">Snap Inc.</td>
+        </tr>
+    </table>
+    <table align="center" cellspacing="30" cellpadding="0">
+        <tr>
+            <td style="font-family:'Montserrat', sans-serif;">DOORDASH</td>
+            <td style="font-family:'Archivo', sans-serif;">Adobe</td>
+            <td style="font-family:'Mulish', sans-serif;">PayPal</td>
+            <td style="font-family:'Libre Baskerville', serif;">Goldman<br>Sachs</td>
+            <td style="font-family:'Pacifico', cursive;">Canva</td>
+        </tr>
+    </table>
+</div>
+
+<br>
+
+<!-- ===== GLOW SECTION 1 ===== -->
+<section class="section1" id="section1">
+    <div class="topGlow"></div>
+    <div class="content1">
+        <p style="color:rgb(1, 119, 1);font-size:40px;font-family:'Lora',serif;">"The future is human PLUS AI."</p>
+        <p class="scroll-para" id="scroll-p1">
+            We have entered a new era of software development where human
+            and AI build together. This changes the skills you need as a developer,
+            and the way companies engage, hire, and upskill technical talent.
+            In short, this changes everything.
+        </p>
+        <br>
+        <p class="scroll-para" id="scroll-p2">
+            We're embracing these changes with you, and we've reinvented our
+            products to meet the moment.
+        </p>
+    </div>
+</section>
+
+<!-- ===== GLOW SECTION 2 ===== -->
+<section class="section2">
+    <div class="bottomGlow"></div>
+    <div class="content2">
+        <h1>The Developer Skills Platform</h1>
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+<div class="two-col fly-section">
+    <div>
+        <div class="product-badge">HACKERRANK COMMUNITY</div>
+        <p class="product-heading">Prepare and apply for your dream job</p>
+        <p class="product-body">
+            Over 26 million developers have joined the HackerRank community to certify their skills,
+            practice interviewing, and discover relevant jobs. An AI Mock Interviewer can help you prepare,
+            while our QuickApply agent puts your job search on autopilot.
+        </p>
+        <p class="tablebtn2" style="position:relative;left:20px;text-align:left;">Learn more &rarr;</p>
+    </div>
+    <div class="relative">
+        <video width="500" autoplay muted>
+            <source src="https://cdn.prod.website-files.com/66b6d7fd4d3e9cef94717176%2F6741fee19917cc8400fe361d_HackerRank%20Community%20Video-transcode.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<!-- ENGAGE -->
+<div class="two-col fly-section">
+    <div class="relative">
+        <video width="500" autoplay muted>
+            <source src="https://cdn.prod.website-files.com/66b6d7fd4d3e9cef94717176%2F67abf3b87b35de0f7a554086_engageloop%20%281%29-transcode.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div>
+        <div class="product-badge">HACKERRANK ENGAGE</div>
+        <p class="product-heading">Showcase your tech brand</p>
+        <p class="product-body">
+            Attract developers with hackathons that feature real-world challenges, and preview what it's like to work at your company.
+            Our AI Assistant helps you set up a hackathon in minutes.
+            Host it yourself or advertise and run a campaign through our developer community.
+        </p>
+        <p class="tablebtn2" style="position:relative;left:20px;text-align:left;">Learn more &rarr;</p>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<!-- INTERVIEW -->
+<div class="two-col fly-section">
+    <div>
+        <div class="product-badge">HACKERRANK INTERVIEW</div>
+        <p class="product-heading">Pair-programming<br>interviews on demand</p>
+        <p class="product-body">
+            Get an accurate sense for what it would be like to work together by pair programming with candidates on real-world scenarios.
+            Review code, fix bugs, build a feature, and see the result, all within an interview setting using pre-set repos or one of your own.
+        </p>
+        <p class="tablebtn2" style="position:relative;left:20px;text-align:left;">Learn more &rarr;</p>
+    </div>
+    <div class="relative">
+        <video width="500" autoplay muted>
+            <source src="https://cdn.prod.website-files.com/66b6d7fd4d3e9cef94717176%2F6741fef60ab73dfc01af6953_HackerRank%20Interview%20Transcode-transcode.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<!-- SKILLUP -->
+<div class="two-col fly-section">
+    <div class="relative">
+        <video width="500" autoplay muted>
+            <source src="https://cdn.prod.website-files.com/66b6d7fd4d3e9cef94717176%2F6741feface5fde257eba2e92_HackerRank%20Skillup%20Transcode-transcode.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div>
+        <div class="product-badge">HACKERRANK SKILLUP</div>
+        <p class="product-heading">Find skills inside your company</p>
+        <p class="product-body">
+            Empower developers to showcase their skills, earn certifications, and gain recognition - while helping you strengthen your organization.
+            Our AI Tutor helps developers learn as they go, while our advanced insights help you understand the skillsets of your organization.
+        </p>
+        <p class="tablebtn2" style="position:relative;left:20px;text-align:left;">Learn more &rarr;</p>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<p style="font-size:50px;text-align:center;font-family:'Lora',serif;font-weight:400;">
+    Loved by companies of all sizes and<br> developers from all backgrounds
+</p>
+
+<!-- ===== TESTIMONIALS CAROUSEL ===== -->
+<div class="testimonials-section">
+
+    <div class="carousel-wrapper">
+
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">&#8249;</button>
+
+        <!-- Slide 1: Akamai -->
+        <div class="carousel-slide active">
+            <div class="slide-logo logo-akamai">&#9680; Akamai</div>
+            <p class="slide-quote">
+                The proctoring features of HackerRank have a profound impact on the candidate experience.
+                It reassures them that their skills and potential are what truly matter to us.
+            </p>
+            <p class="slide-author"><strong>K. Thomas</strong> &nbsp; Head of Talent Acquisition</p>
+        </div>
+
+        <!-- Slide 2: Atlassian -->
+        <div class="carousel-slide">
+            <div class="slide-logo logo-atlassian">&#9650; ATLASSIAN</div>
+            <p class="slide-quote">
+                HackerRank helped us go beyond traditional universities.
+                We've scaled up our college hiring from zero to 200.
+            </p>
+            <p class="slide-author"><strong>A. Viswanathan</strong> &nbsp; Head of Engineering</p>
+        </div>
+
+        <!-- Slide 3: Vanguard -->
+        <div class="carousel-slide">
+            <div class="slide-logo logo-vanguard">Vanguard</div>
+            <p class="slide-quote">
+                We have seen a significant reduction in the number of interviews needed
+                in order to hire the same number of high-quality candidates.
+            </p>
+            <p class="slide-author"><strong>N. Alexandro</strong> &nbsp; IT Director</p>
+        </div>
+
+        <!-- Slide 4: UKG -->
+        <div class="carousel-slide">
+            <div class="slide-logo logo-ukg">&#183;&#183; UKG</div>
+            <p class="slide-quote">
+                The platform effectively replicates a real-world office environment,
+                providing candidates with a glimpse of what they would encounter on the job.
+            </p>
+            <p class="slide-author"><strong>M. Teolis</strong> &nbsp; Talent Acquisition Manager</p>
+        </div>
+
+        <!-- Slide 5: DoorDash -->
+        <div class="carousel-slide">
+            <div class="slide-logo logo-doordash">&#9654; DOORDASH</div>
+            <p class="slide-quote">
+                We cut down hiring time by months, which was huge for us.
+                We owe that to HackerRank.
+            </p>
+            <p class="slide-author"><strong>M. Patino</strong> &nbsp; University Recruiting</p>
+        </div>
+
+        <!-- Slide 6: Deliveroo -->
+        <div class="carousel-slide">
+            <div class="slide-logo logo-deliveroo">&#10004; deliveroo</div>
+            <p class="slide-quote">
+                HackerRank SkillUp received rave reviews. We started with our junior team
+                and have now extended it to our mid-level.
+            </p>
+            <p class="slide-author"><strong>A. Coleman</strong> &nbsp; Senior Recruiting Manager</p>
+        </div>
+
+        <button class="carousel-btn next" onclick="changeSlide(1)">&#8250;</button>
+
+    </div>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="dots"></div>
+
+</div>
+
+
+<!-- For Developers -->
+<div class="for-developers" style="background-color:#0d1117;color:white;border:0.5px solid grey;">
+    <div class="two-col">
+        <div>
+            <p style="font-size:30px;font-family:'Lora',serif;font-weight:500;">For Developers</p>
+            <p style="font-size:22px;font-family:'Inter',sans-serif;">
+                Over 26 million developers have<br>joined the HackerRank Community to
+                learn and certify their skills,<br>practice interviewing, and discover relevant jobs.
+            </p>
+            <table align="center" cellpadding="0" cellspacing="0" style="border:2px solid black;">
+                <tr>
+                    <td class="btn" style="text-align:center;padding:12px;border:1px solid grey;">
+                        Join the Community
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p style="font-size:30px;font-family:'Lora',serif;font-weight:500;">For Companies</p>
+            <p style="font-size:22px;font-family:'Inter',sans-serif;">
+                Thousands of companies have embraced the new way to hire and upskill developers<br>
+                across roles and throughout their careers.
+            </p>
+            <table align="center" cellpadding="0" cellspacing="0" style="border:2px solid black;">
+                <tr>
+                    <td class="btn" style="text-align:center;padding:12px;border:1px solid grey;">
+                        Start a Free Trial
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="four" style="background-color:#0d1117;color:gray;">
+    <table align="center" cellpadding="10" cellspacing="10">
+        <tr style="color:white;font-family:'Inter',sans-serif;">
+            <td>Products</td>
+            <td>Solutions</td>
+            <td>Resources</td>
+            <td>About us</td>
+            <td>Get started</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Screen</td>
+            <td class="tablebtn">Set up your skills strategy</td>
+            <td class="tablebtn">Blog</td>
+            <td class="tablebtn">Careers</td>
+            <td class="tablebtn">Pricing</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Interview</td>
+            <td class="tablebtn">Showcase your tech brand</td>
+            <td class="tablebtn">Custom stories</td>
+            <td class="tablebtn">Status</td>
+            <td class="tablebtn">Free Trial</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Engage</td>
+            <td class="tablebtn">Optimise your hiring process</td>
+            <td class="tablebtn">Roles directory</td>
+            <td class="tablebtn">Trust</td>
+            <td class="tablebtn">Request a demo</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Skill up</td>
+            <td class="tablebtn">Mobilize your internal talent</td>
+            <td class="tablebtn">Partners</td>
+            <td class="tablebtn"></td>
+            <td class="tablebtn">Product support</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Certified assessments</td>
+            <td></td>
+            <td class="tablebtn">Integrations</td>
+            <td></td>
+            <td class="tablebtn">For developers</td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Plagiarism detection</td>
+            <td></td>
+            <td class="tablebtn">What's new</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="tablebtn">Real-world questions</td>
+            <td></td>
+            <td class="tablebtn">Writing</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="three" style="font-family:'Inter',sans-serif;">
+        <div><p>© HackerRank 2026 All Rights Reserved.</p></div>
+        <div><p>Privacy Policy</p></div>
+        <div><p>Terms of Service</p></div>
+        <div><p>Candidate AI Notice</p></div>
+    </div>
+</div>
+
+
+<script>
+
+/* ---- Typewriter ---- */
+let words = ["Hire", "Become", "Upskill"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    let currentWord = words[wordIndex];
+    let text = document.getElementById("text");
+    if (!isDeleting) {
+        text.innerHTML = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentWord.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000);
+            return;
+        }
+    } else {
+        text.innerHTML = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            if (wordIndex === words.length) wordIndex = 0;
+        }
+    }
+    setTimeout(typeEffect, isDeleting ? 80 : 150);
+}
+
+typeEffect();
+
+/* ---- Carousel ---- */
+const slides = document.querySelectorAll(".carousel-slide");
+const dotsContainer = document.getElementById("dots");
+let current = 0;
+
+slides.forEach((_, i) => {
+    const d = document.createElement("div");
+    d.className = "dot" + (i === 0 ? " active" : "");
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+});
+
+function goTo(index) {
+    slides[current].classList.remove("active");
+    dotsContainer.children[current].classList.remove("active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("active");
+    dotsContainer.children[current].classList.add("active");
+}
+
+function changeSlide(dir) {
+    goTo(current + dir);
+}
+
+setInterval(() => changeSlide(1), 5000);
+
+/* ---- Word-by-word scroll animation ---- */
+(function () {
+
+    document.querySelectorAll('.scroll-para').forEach(para => {
+        const raw = para.innerText.trim();
+        para.innerHTML = raw
+            .split(/(\s+)/)
+            .map(token => token.trim()
+                ? `<span class="scroll-word">${token}</span>`
+                : token)
+            .join('');
+    });
+
+    const allWords = document.querySelectorAll('.scroll-word');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('lit');
+            } else {
+                const rect = entry.target.getBoundingClientRect();
+                if (rect.top > window.innerHeight * 0.5) {
+                    entry.target.classList.remove('lit');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    });
+
+    allWords.forEach(word => observer.observe(word));
+
+})();
+
+/* ---- Fly-up scroll animation ---- */
+(function () {
+
+    const flySections = document.querySelectorAll('.fly-section');
+
+    const flyObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fly-in');
+                flyObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    flySections.forEach(function (section) {
+        flyObserver.observe(section);
+    });
+
+})();
+
+</script>
+</body>
+</html>
